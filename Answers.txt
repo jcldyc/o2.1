@@ -26,4 +26,9 @@
 	is a difference in the output.
 
 8) Modify Program 3.1 by replacing the final fprintf statement with a loop that reads
-	nchars characters from standard input, one character at a time, and puts them in an array  called mybuf.  The values of n and nchars should  be  passed as command-line arguments.  After the  loop, put a '\0' character in entry nchars of the array so that it contains a string in mybuf.  Run the program for several values of n and nchars.  Observe the results.  Press the return key often and continue typing at the keyboard until all of the processes have exited.
+	nchars characters from standard input, one character at a time, and puts them in 
+	an array  called mybuf.  The values of n and nchars should  be  passed as command-line 
+	arguments.  After the  loop, put a '\0' character in entry nchars of the array so that 
+	it contains a string in mybuf.  Run the program for several values of n and nchars.  
+	Observe the results.  Press the return key often and continue typing at the keyboard 
+	until all of the processes have exited.
