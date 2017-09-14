@@ -14,15 +14,31 @@
 
 	18339 --> 18340 --> 18341 --> 18342 
 
-	I'm not really sure why i:2's parent ID is 1.  I figured it should be 18339 but this doesn't seem  to be
-	the case.  i:1's parent ID is 18078.  
+	i:2's parent ID is 1 because i:2 is now an orphan.  This means the parent terminated without waiting for it's child.  This process is called init and has a process ID equal to 1.  i:1's parent ID is 18078.  
 	
 
 3) Experiment with different values for  the command-line argument to find  out the  largest
 	number  of processes that the program can generate.  Observe the fraction that 
 	are adopted by init.
-
 	
+	simplechain 50:
+		Round 1: 12 children were orphaned and adopted by init
+		Round 2: 18 children were orphaned and adopted by init
+		Round 3: 18 children were orphaned and adopted by init
+		
+	simplechain 100:
+		Round 1: 29 children were orphaned and adopted by init
+		Round 2: 36 children were orphaned and adopted by init
+
+
+	So far, the largestnumber of processes that the program can generate is 76,505.
+	Running it a few more times and I was able to 100,000.
+	I'm  going to try running it with an argument of 300,000 to see if it will make  it.
+		- I was able to make it to 156,000 processes trying this
+
+	After running this ~50 times, the highest amount of processes I was able to generate was 156,000 as 
+		stated previously when running with an arg 300,000.
+		
 
 4) Place sleep(10); directly before the final fprintf statement in Program 3.1.  What is  
 	the  maximum number of of processes generated in this case?
