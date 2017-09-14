@@ -43,6 +43,9 @@
 4) Place sleep(10); directly before the final fprintf statement in Program 3.1.  What is  
 	the  maximum number of of processes generated in this case?
 
+	The maximum number processes I could get generated was 21.  I ran it about 30 times and it was the same every time at 21 processes.
+
+
 5) Put a loop around the final fprintf in Program 3.1.  Have the loop execute k times.
 	Put sleep(m); inside  this loop after the fprintf.  Pass k and m on the command 
 	line.  Run the program for several values of  n, k and m.  Observe the results.
