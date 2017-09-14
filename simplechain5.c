@@ -6,7 +6,7 @@ int main (int argc, char *argv[]){
 	pid_t childpid = 0;
 	int i, n, k, m, q;
 
-	if (argc != 2){
+	if (argc != 4){
 		fprintf (stderr, "Usage: %s processes\n", argv[0]);
 		return 1;
 	}
