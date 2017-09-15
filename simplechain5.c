@@ -5,22 +5,21 @@
 int main (int argc, char *argv[]){
 	pid_t childpid = 0;
 	int i, n, k, m, q, c;
-	
 	while ((c = getopt (argc, argv, "h")) != -1)
 		switch (c){
 			case 'h':
 				fprintf (stderr, "Usage: %s <int> <int> <int>\n", argv[0]);
-				
 				break;
+			case '?':
+				fprintf(stderr, "Unknown option -%c. \n", optopt);
 			default:
+				fprintf(stderr, "getopt");
 				break;
 		}
 
 	if (argc != 4){
-		
 			fprintf (stderr, "Usage: %s processes\n", argv[0]);
-			return 1;
-				
+			return 1;	
 	}
 	
 	n = atoi(argv[1]);
@@ -31,11 +30,8 @@ int main (int argc, char *argv[]){
 			break;
 
 	for(q=0; q<k; q++){
-	fprintf(stderr, "i:%d process ID: %ld parent ID: %ld child ID: %ld\n",
-		i, (long)getpid(), (long)getppid(), (long)childpid);
+		fprintf(stderr, "i:%d process ID: %ld parent ID: %ld child ID: %ld\n",i, (long)getpid(), (long)getppid(), (long)childpid);
 	sleep(m);
 	}
 	return 0;
-
-	perror("Error: Error:");
 }
