@@ -4,12 +4,25 @@
 
 int main (int argc, char *argv[]){
 	pid_t childpid = 0;
-	int i, n, k, m, q;
+	int i, n, k, m, q, c;
+	
+	while ((c = getopt (argc, argv, "h")) != -1)
+		switch (c){
+			case 'h':
+				fprintf (stderr, "Usage: %s <int> <int> <int>\n", argv[0]);
+				
+				break;
+			default:
+				break;
+		}
 
 	if (argc != 4){
-		fprintf (stderr, "Usage: %s processes\n", argv[0]);
-		return 1;
+		
+			fprintf (stderr, "Usage: %s processes\n", argv[0]);
+			return 1;
+				
 	}
+	
 	n = atoi(argv[1]);
 	k = atoi(argv[2]);
 	m = atoi(argv[3]);
@@ -23,4 +36,6 @@ int main (int argc, char *argv[]){
 	sleep(m);
 	}
 	return 0;
+
+	perror("Error: Error:");
 }
