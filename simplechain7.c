@@ -27,8 +27,9 @@ int main (int argc, char *argv[]){
 	for (i = 1; i < n; i++)
 		if(childpid = fork())
 			break;
-
-	fprintf(stderr, "i:%d process ID: %ld parent ID: %ld child ID: %ld\n",
-		i, (long)getpid(), (long)getppid(), (long)childpid);
+	fprintf(stderr,"i:%d", i);
+	fprintf(stderr,"process ID: %ld",(long)getpid());
+	fprintf(stderr,"parent ID: %ld",(long)getppid());
+	fprintf(stderr,"child ID: %ld",(long)childpid);
 	return 0;
 }
