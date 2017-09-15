@@ -1,0 +1,19 @@
+This is Assignment 1 in Operating Systems
+Author: Jacob Li
+SSOID: jcldyc
+
+This project contains files for each of the questions that required updating on program 3.1.  The files are named simplechain plus the number of  the question.  
+
+Files inlcluded:
+
+Answers
+makefile
+simplechain.c
+simplechain4.c
+simplechain5.c
+simplechain6.c
+simplechain7.c
+simplechain8.c
+
+
+The makefile creates executables for every file without any extension.
