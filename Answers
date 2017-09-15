@@ -1,8 +1,9 @@
 3.8 Exercise: Process Chains
 
 1) Run Program 3.1 and observe the results for different numbers of  processes.
-
-	Okay, I ran and observed it.  Done.
+	
+	It seemed that more processes would start up when there was less orphaned processes.  The processes outputted
+	as expected as well and were easy to read. 
 
 2) Fill in the  actual process IDs of the processes in the diagram of Figure 3.2 for
 	a run with command-line argument value of  4.
@@ -49,15 +50,36 @@
 5) Put a loop around the final fprintf in Program 3.1.  Have the loop execute k times.
 	Put sleep(m); inside  this loop after the fprintf.  Pass k and m on the command 
 	line.  Run the program for several values of  n, k and m.  Observe the results.
+	
+	The most processes I could get to start was 26.  As it looped, the amount of processes would vary between 25
+	and 26.  
 
 6) Modify Program 3.1 by putting a wait function call before the final fprintf statement.
 	How does this affect the  ouput of the  program.
+	
+	When I ran this over and over again, I was only able to get 26 processes to start max.  It also causes the 
+	first child ID to be -1.  The processes were, in a visual sense, outputted in a reverse order compared to 
+	3.1 original.  The wait function allowed the child processes to finish before the parent process terminated
+	and caused the child to become an orphan. 
 
 7) Modify Program 3.1 by replacing the final fprintf statement with four fprintf statements,
 	one each for the four integers displayed.  Only the  last one should output a 
 	newline.  What ahppens when you  run the  program?  Can you  tell which process 
 	generated each part of the output?  Run the program several times and see if there
 	is a difference in the output.
+	
+	When you run the program almost  all of the parent ID's are 1. 
+	
+	1) Prints the iteration
+	2) Prints process ID
+	3) Prints parent ID 	//which is now 1, meaning the parent process terminated
+	4) Prints child ID 	
+	
+	So after each \n, the parent process is terminating and then causing the next line to show the parent in
+	that zombie state.  
+	
+	You can read the output and see each processes child and the childs parent. After running the 
+	program many times, it didn't  seem to change much at all for the 
 
 8) Modify Program 3.1 by replacing the final fprintf statement with a loop that reads
 	nchars characters from standard input, one character at a time, and puts them in 
